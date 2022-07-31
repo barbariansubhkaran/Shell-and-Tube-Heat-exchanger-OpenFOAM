@@ -1,0 +1,292 @@
+FoamFile
+{
+    version         2;
+    format          ascii;
+    class           dictionary;
+    object          snappyHexMeshDict;
+}
+
+// Exported by SnappyHexMesh GUI add-on for Blender v1.0
+// Source file: /home/gagan/Documents/heat_exhanger_another_atempt.blend
+// Export date: 2022-07-16 21:12:19.494552
+
+castellatedMesh true;
+snap            true;
+addLayers       false;
+
+geometry
+{
+    baffles
+    {
+        type triSurfaceMesh;
+        file "baffles.stl";
+        // Min Bounds = [-1.87637e+00 -4.88319e-01 -4.88319e-01]
+        // Max Bounds = [ 1.87637e+00  4.88319e-01  4.88319e-01]
+        // Area = 4.26244e+00
+    }
+    cold_inlet
+    {
+        type triSurfaceMesh;
+        file "cold_inlet.stl";
+        // Min Bounds = [-2.25500e+00 -1.09087e-01  9.10783e-01]
+        // Max Bounds = [-2.03683e+00  1.09087e-01  9.10784e-01]
+        // Area = 3.73697e-02
+    }
+    cold_outlet
+    {
+        type triSurfaceMesh;
+        file "cold_outlet.stl";
+        // Min Bounds = [ 2.03275e+00 -1.09087e-01 -8.67413e-01]
+        // Max Bounds = [ 2.25093e+00  1.09087e-01 -8.67413e-01]
+        // Area = 3.73697e-02
+    }
+    exchanger
+    {
+        type triSurfaceMesh;
+        file "exchanger.stl";
+        // Min Bounds = [-3.26400e+00 -4.88319e-01 -8.67414e-01]
+        // Max Bounds = [ 3.30343e+00  4.88319e-01  9.10784e-01]
+        // Area = 2.34428e+01
+    }
+    hot_inlet
+    {
+        type triSurfaceMesh;
+        file "hot_inlet.stl";
+        // Min Bounds = [-2.86613e+00 -1.09087e-01  9.10783e-01]
+        // Max Bounds = [-2.64796e+00  1.09087e-01  9.10784e-01]
+        // Area = 3.73697e-02
+    }
+    hot_outlet
+    {
+        type triSurfaceMesh;
+        file "hot_outlet.stl";
+        // Min Bounds = [-2.86613e+00 -1.09087e-01 -8.67414e-01]
+        // Max Bounds = [-2.64796e+00  1.09087e-01 -8.67414e-01]
+        // Area = 3.73697e-02
+    }
+    inlet_baffle
+    {
+        type triSurfaceMesh;
+        file "inlet_baffle.stl";
+        // Min Bounds = [-2.41247e+00 -4.88319e-01 -4.88319e-01]
+        // Max Bounds = [-2.41247e+00  4.88319e-01  4.88319e-01]
+        // Area = 9.21143e-01
+    }
+    outlet_baffle
+    {
+        type triSurfaceMesh;
+        file "outlet_baffle.stl";
+        // Min Bounds = [ 2.41247e+00 -4.88319e-01 -4.88319e-01]
+        // Max Bounds = [ 2.41247e+00  4.88319e-01  4.88319e-01]
+        // Area = 8.96916e-01
+    }
+    pipes
+    {
+        type triSurfaceMesh;
+        file "pipes.stl";
+        // Min Bounds = [-2.41247e+00 -4.59110e-01 -3.56438e-01]
+        // Max Bounds = [ 2.41247e+00  4.58004e-01  3.58030e-01]
+        // Area = 2.91075e+01
+    }
+}
+
+castellatedMeshControls
+{
+    maxLocalCells   10000000;
+    maxGlobalCells  10000000;
+    minRefinementCells 10;
+    maxLoadUnbalance 0.1;
+    nCellsBetweenLevels 4;
+    locationInMesh (0.0 0.0 0.392073);
+    allowFreeStandingZoneFaces true;
+    resolveFeatureAngle 30;
+    features
+    (
+        {
+            file "baffles.eMesh";
+            level 0;
+        }
+        {
+            file "cold_inlet.eMesh";
+            level 0;
+        }
+        {
+            file "cold_outlet.eMesh";
+            level 0;
+        }
+        {
+            file "exchanger.eMesh";
+            level 0;
+        }
+        {
+            file "hot_inlet.eMesh";
+            level 0;
+        }
+        {
+            file "hot_outlet.eMesh";
+            level 0;
+        }
+        {
+            file "inlet_baffle.eMesh";
+            level 0;
+        }
+        {
+            file "outlet_baffle.eMesh";
+            level 0;
+        }
+        {
+            file "pipes.eMesh";
+            level 0;
+        }
+
+    );
+    refinementSurfaces
+    {
+        baffles
+        {
+            level (2 2);
+            patchInfo { type wall; }
+            faceZone	baffles;
+			      faceType	baffle;
+        }
+        cold_inlet
+        {
+            level (1 1);
+            patchInfo { type patch; }
+        }
+        cold_outlet
+        {
+            level (1 1);
+            patchInfo { type patch; }
+        }
+        exchanger
+        {
+            level (4 4);
+            patchInfo { type wall; }
+        }
+        hot_inlet
+        {
+            level (1 1);
+            patchInfo { type patch; }
+        }
+        hot_outlet
+        {
+            level (1 1);
+            patchInfo { type patch; }
+        }
+        inlet_baffle
+        {
+            level (2 2);
+            patchInfo { type wall; }
+        }
+        outlet_baffle
+        {
+            level (2 2);
+            patchInfo { type wall; }
+        }
+        pipes
+        {
+            level (4 4);
+            patchInfo { type wall; }
+        }
+
+    }
+    refinementRegions
+    {
+
+    }
+}
+
+snapControls
+{
+    nSmoothPatch    5;
+    tolerance       1;
+    nSolveIter      500;
+    nRelaxIter      10;
+    nFeatureSnapIter 10;
+    implicitFeatureSnap true;
+    explicitFeatureSnap true;
+    multiRegionFeatureSnap true;
+}
+
+addLayersControls
+{
+    relativeSizes   true;
+    expansionRatio  1;
+    finalLayerThickness 0.3;
+    minThickness    0.1;
+    nGrow           0;
+    featureAngle    60;
+    slipFeatureAngle 30;
+    nRelaxIter      3;
+    nSmoothSurfaceNormals 1;
+    nSmoothNormals  3;
+    nSmoothThickness 10;
+    maxFaceThicknessRatio 0.5;
+    maxThicknessToMedialRatio 0.3;
+    minMedianAxisAngle 90;
+    nBufferCellsNoExtrude 0;
+    nLayerIter      50;
+    layers
+    {
+        baffles
+        {
+             nSurfaceLayers 0;
+        }
+        cold_inlet
+        {
+             nSurfaceLayers 0;
+        }
+        cold_outlet
+        {
+             nSurfaceLayers 0;
+        }
+        exchanger
+        {
+             nSurfaceLayers 0;
+        }
+        hot_inlet
+        {
+             nSurfaceLayers 0;
+        }
+        hot_outlet
+        {
+             nSurfaceLayers 0;
+        }
+        inlet_baffle
+        {
+             nSurfaceLayers 0;
+        }
+        outlet_baffle
+        {
+             nSurfaceLayers 0;
+        }
+        pipes
+        {
+             nSurfaceLayers 0;
+        }
+
+    }
+}
+
+meshQualityControls
+{
+    maxNonOrtho     65;
+    maxBoundarySkewness 20;
+    maxInternalSkewness 4;
+    maxConcave      80;
+    minVol          1e-15;
+    minTetQuality   1e-15;
+    minArea         -1;
+    minTwist        0.02;
+    minDeterminant  0.001;
+    minFaceWeight   0.05;
+    minVolRatio     0.01;
+    minTriangleTwist -1;
+    nSmoothScale    4;
+    errorReduction  0.75;
+}
+
+writeFlags      ( scalarLevels layerSets layerFields );
+
+mergeTolerance  1e-06;

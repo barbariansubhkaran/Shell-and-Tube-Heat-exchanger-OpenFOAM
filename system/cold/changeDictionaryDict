@@ -1,0 +1,156 @@
+FoamFile
+{
+	version	2.0;
+	format	binary;
+	class	dictionary;
+	location	"system/cold";
+	object	changeDictionaryDict;
+}
+p_rgh
+{
+	boundaryField
+	{
+		baffles
+		{
+			type	fixedFluxPressure;
+		}
+		baffles_slave
+		{
+			type	fixedFluxPressure;
+		}
+		exchanger
+		{
+			type	fixedFluxPressure;
+		}
+		exchanger_cold_inlet
+		{
+			type	fixedFluxPressure;
+		}
+		exchanger_cold_outlet
+		{
+			type	fixedValue;
+			value	uniform 100000.0;
+		}
+		pipes
+		{
+			type	fixedFluxPressure;
+		}
+		pipes_inlet_baffle
+		{
+			type	fixedFluxPressure;
+		}
+		pipes_outlet_baffle
+		{
+			type	fixedFluxPressure;
+		}
+	}
+}
+p
+{
+	boundaryField
+	{
+	}
+}
+U
+{
+	boundaryField
+	{
+		baffles
+		{
+			type	noSlip;
+		}
+		baffles_slave
+		{
+			type	noSlip;
+		}
+		exchanger
+		{
+			type	noSlip;
+		}
+		exchanger_cold_inlet
+		{
+			type	surfaceNormalFixedValue;
+			refValue	uniform -0.01;
+		}
+		exchanger_cold_outlet
+		{
+			type	pressureInletOutletVelocity;
+			value	uniform (0.01 0.0 0.0);
+		}
+		pipes
+		{
+			type	noSlip;
+		}
+		pipes_inlet_baffle
+		{
+			type	noSlip;
+		}
+		pipes_outlet_baffle
+		{
+			type	noSlip;
+		}
+	}
+}
+T
+{
+	boundaryField
+	{
+		baffles
+		{
+			type	zeroGradient;
+		}
+		baffles_slave
+		{
+			type	zeroGradient;
+		}
+		exchanger
+		{
+			type	zeroGradient;
+		}
+		exchanger_cold_inlet
+		{
+			type	totalTemperature;
+			T0	uniform 283.0;
+			gamma	1.124;
+		}
+		exchanger_cold_outlet
+		{
+			type	zeroGradient;
+		}
+		pipes
+		{
+			type	compressible::turbulentTemperatureCoupledBaffleMixed;
+			value	uniform 283.0;
+			kappaMethod	fluidThermo;
+			kappa	none;
+			neighbourFieldName	T;
+			Tnbr	T;
+			thicknessLayers	(0.005);
+			kappaLayers	(385.0);
+		}
+		pipes_inlet_baffle
+		{
+			type	compressible::turbulentTemperatureCoupledBaffleMixed;
+			value	uniform 283.0;
+			kappaMethod	fluidThermo;
+			kappa	none;
+			neighbourFieldName	T;
+			Tnbr	T;
+			thicknessLayers	(0.005);
+			kappaLayers	(385.0);
+		}
+		pipes_outlet_baffle
+		{
+			type	compressible::turbulentTemperatureRadCoupledMixed;
+			value	uniform 283.0;
+			qrNbr	none;
+			qr	none;
+			neighbourFieldName	T;
+			kappaMethod	fluidThermo;
+			kappa	none;
+			Tnbr	T;
+			thicknessLayers	(0.005);
+			kappaLayers	(385.0);
+		}
+	}
+}

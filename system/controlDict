@@ -1,0 +1,51 @@
+FoamFile
+{
+	class	dictionary;
+	format	ascii;
+	location	system;
+	object	controlDict;
+	version	2.0;
+}
+application	chtMultiRegionSimpleFoam;
+deltaT	1;
+endTime	2000;
+purgeWrite	2;
+startFrom	latestTime;
+startTime	0;
+stopAt	endTime;
+timeFormat	general;
+timePrecision	6;
+writeControl	timeStep;
+writeInterval	10;
+writePrecision	7;
+runTimeModifiable	true;
+compression	uncompressed;
+writeFormat	binary;
+libs	("libfvMotionSolvers.so" "libturbulenceModels.so" "libturbulenceModelSchemes.so");
+functions
+{
+	writeExtraFieldsInHot
+	{
+		libs	("libutilityFunctionObjects.so");
+		objects	(rho);
+		type	writeObjects;
+		writeOption	anyWrite;
+		enabled	true;
+		log	true;
+		writeControl	writeTime;
+		region	hot;
+	}
+	writeExtraFieldsInCold
+	{
+		libs	("libutilityFunctionObjects.so");
+		objects	(rho);
+		type	writeObjects;
+		writeOption	anyWrite;
+		enabled	true;
+		log	true;
+		writeControl	writeTime;
+		region	cold;
+	}
+
+	
+}

@@ -1,0 +1,71 @@
+FoamFile
+{
+	version	2.0;
+	format	binary;
+	class	volScalarField;
+	location	"0/cold";
+	object	T;
+	arch	"LSB;label=32;scalar=64";
+}
+dimensions	[0 0 0 1 0 0 0];
+internalField	uniform 283.0;
+boundaryField
+{
+	baffles
+	{
+		type	zeroGradient;
+	}
+	baffles_slave
+	{
+		type	zeroGradient;
+	}
+	exchanger
+	{
+		type	zeroGradient;
+	}
+	cold_inlet
+	{
+		type	totalTemperature;
+		T0	uniform 283.0;
+		gamma	1.124;
+	}
+	cold_outlet
+	{
+		type	zeroGradient;
+	}
+	pipes
+	{
+		type	compressible::turbulentTemperatureRadCoupledMixed;
+		value	uniform 283.0;
+		kappaMethod	fluidThermo;
+		kappa	none;
+		neighbourFieldName	T;
+		Tnbr	T;
+		thicknessLayers	(0.005);
+		kappaLayers	(385.0);
+	}
+	inlet_baffle
+	{
+		type	compressible::turbulentTemperatureRadCoupledMixed;
+		value	uniform 283.0;
+		kappaMethod	fluidThermo;
+		kappa	none;
+		neighbourFieldName	T;
+		Tnbr	T;
+		thicknessLayers	(0.005);
+		kappaLayers	(385.0);
+	}
+	outlet_baffle
+	{
+		type	compressible::turbulentTemperatureRadCoupledMixed;
+		value	uniform 283.0;
+		qrNbr	none;
+		qr	none;
+		neighbourFieldName	T;
+		kappaMethod	fluidThermo;
+		kappa	none;
+		Tnbr	T;
+		thicknessLayers	(0.005);
+		kappaLayers	(385.0);
+	}
+}

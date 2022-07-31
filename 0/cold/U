@@ -1,0 +1,48 @@
+FoamFile
+{
+	version	2.0;
+	format	binary;
+	class	volVectorField;
+	location	"0/cold";
+	object	U;
+	arch	"LSB;label=32;scalar=64";
+}
+dimensions	[0 1 -1 0 0 0 0];
+internalField	uniform (0.01 0.0 0.0);
+boundaryField
+{
+	baffles
+	{
+		type	noSlip;
+	}
+	baffles_slave
+	{
+		type	noSlip;
+	}
+	exchanger
+	{
+		type	noSlip;
+	}
+	cold_inlet
+	{
+		type	surfaceNormalFixedValue;
+		refValue	uniform -0.01;
+	}
+	cold_outlet
+	{
+		type	pressureInletOutletVelocity;
+		value	uniform (0.01 0.0 0.0);
+	}
+	pipes
+	{
+		type	noSlip;
+	}
+	inlet_baffle
+	{
+		type	noSlip;
+	}
+	outlet_baffle
+	{
+		type	noSlip;
+	}
+}

@@ -1,0 +1,54 @@
+FoamFile
+{
+	version	2.0;
+	format	binary;
+	class	volScalarField;
+	location	"0/cold";
+	object	p;
+	arch	"LSB;label=32;scalar=64";
+}
+dimensions	[1 -1 -2 0 0 0 0];
+internalField	uniform 100000.0;
+boundaryField
+{
+	baffles
+	{
+		type	calculated;
+		value	uniform 100000.0;
+	}
+	baffles_slave
+	{
+		type	calculated;
+		value	uniform 100000.0;
+	}
+	exchanger
+	{
+		type	calculated;
+		value	uniform 100000.0;
+	}
+	cold_inlet
+	{
+		type	calculated;
+		value	uniform 100000.0;
+	}
+	cold_outlet
+	{
+		type	calculated;
+		value	uniform 100000.0;
+	}
+	pipes
+	{
+		type	calculated;
+		value	uniform 100000.0;
+	}
+	inlet_baffle
+	{
+		type	calculated;
+		value	uniform 100000.0;
+	}
+	outlet_baffle
+	{
+		type	calculated;
+		value	uniform 100000.0;
+	}
+}
