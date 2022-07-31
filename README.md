@@ -13,7 +13,7 @@ Execute the following commands :-
 
 4.foamJob -parallel -screen snappyHexMesh -overwrite 
 
-5.reconstructParMesh -cosntant
+5.reconstructParMesh -constant
 
 6.copy and paste the polyMesh folder in cold folder
 
@@ -27,7 +27,7 @@ Execute the following commands :-
 
 11.foamJob -parallel -screen snappyHexMesh -overwrite 
 
-12.reconstructParMesh -cosntant
+12.reconstructParMesh -constant
 
 13.copy and paste the polyMesh folder in hot folder
 
