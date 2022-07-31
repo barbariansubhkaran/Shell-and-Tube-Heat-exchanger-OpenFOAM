@@ -1,0 +1,10 @@
+FoamFile
+{
+	version	2.0;
+	class	uniformDimensionedScalarField;
+	format	ascii;
+	location	"constant/hot";
+	object	hRef;
+}
+dimensions	[0 1 0 0 0 0 0];
+value	0.0;
