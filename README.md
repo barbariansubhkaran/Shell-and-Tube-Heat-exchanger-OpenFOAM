@@ -1,6 +1,6 @@
 # Shell-and-Tube-Heat-exchanger-OpenFOAM
 
-[<img src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/fd275ff0a4d0179913ce146506715635/large.png"/>]
+<img src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/fd275ff0a4d0179913ce146506715635/large.png"/>
 
 
 Conjugate heat transfer simulation of a Shell and tube heat exchanger
