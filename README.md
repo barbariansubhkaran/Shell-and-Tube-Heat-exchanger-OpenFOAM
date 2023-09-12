@@ -3,38 +3,40 @@
 <img src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/fd275ff0a4d0179913ce146506715635/large.png"/>
 
 
-Conjugate heat transfer simulation of a Shell and tube heat exchanger
+## Conjugate heat transfer simulation of a Shell and tube heat exchanger
 
-This is a Shell and Tube heat exchanger simulation, geometry created in blender. 
+### This is a Shell and Tube heat exchanger simulation, geometry created in blender. 
 
 Execute the following commands :- 
+```
+blockMesh 
 
-1.blockMesh 
+surfaceFeatureExtract 
 
-2.surfaceFeatureExtract 
+decomposePar -force 
 
-3.decomposePar -force 
+foamJob -parallel -screen snappyHexMesh -overwrite 
 
-4.foamJob -parallel -screen snappyHexMesh -overwrite 
+reconstructParMesh -constant
 
-5.reconstructParMesh -constant
+copy and paste the polyMesh folder in cold folder
 
-6.copy and paste the polyMesh folder in cold folder
+Change the locationInMesh for hot in snappyHexMeshdict
 
-7.Change the locationInMesh for hot in snappyHexMeshdict
+blockMesh 
 
-8.blockMesh 
+surfaceFeautureExtract 
 
-9.surfaceFeautureExtract 
+decomposePar -force 
 
-10.decomposePar -force 
+foamJob -parallel -screen snappyHexMesh -overwrite 
 
-11.foamJob -parallel -screen snappyHexMesh -overwrite 
+reconstructParMesh -constant
 
-12.reconstructParMesh -constant
+copy and paste the polyMesh folder in hot folder
 
-13.copy and paste the polyMesh folder in hot folder
+decomposePar -force -allRegions
 
-14. decomposePar -force -allRegions
+foamJob -parallel -screen  chtMultiRegionSimpleFoam
 
-15.foamJob -parallel -screen  chtMultiRegionSimpleFoam
+```
