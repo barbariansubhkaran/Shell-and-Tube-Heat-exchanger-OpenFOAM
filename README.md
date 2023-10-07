@@ -5,36 +5,53 @@
 
 ## Conjugate heat transfer simulation of a Shell and tube heat exchanger
 
-### This is a Shell and Tube heat exchanger simulation, geometry created in blender. 
+### This is a Shell and Tube heat exchanger simulation, geometry created in blender.
 
-Execute the following commands :- 
+Execute the following commands :-
 ```
-blockMesh 
+blockMesh
 
-surfaceFeatureExtract 
+surfaceFeatureExtract
 
-decomposePar -force 
+decomposePar -force
 
-foamJob -parallel -screen snappyHexMesh -overwrite 
+foamJob -parallel -screen snappyHexMesh -overwrite
 
 reconstructParMesh -constant
 
-copy and paste the polyMesh folder in cold folder
+mv constant/polyMesh constant/cold
+
+```
 
 Change the locationInMesh for hot in snappyHexMeshdict
 
-blockMesh 
+<img src=https://sun9-2.userapi.com/impg/GutCCZUP11dCZbgFRAq6PLCIbGqe_IOIfNGnzw/jxSXvkh4fBk.jpg?size=893x105&quality=95&sign=9d049403ba4fbfae71d7241974b9a659&type=album/>
+```
+blockMesh
 
-surfaceFeautureExtract 
+surfaceFeautureExtract
 
-decomposePar -force 
+decomposePar -force
 
-foamJob -parallel -screen snappyHexMesh -overwrite 
+foamJob -parallel -screen snappyHexMesh -overwrite
 
 reconstructParMesh -constant
 
 copy and paste the polyMesh folder in hot folder
+```
+Change the boundaries in cold/polyMesh/boundary file as per :-
 
+<img src = />
+<img src = />
+<img src = />
+
+Change the boundaries in hot/polyMesh/boundary file as per :-
+
+<img src = />
+<img src = />
+<img src = />
+
+```
 decomposePar -force -allRegions
 
 foamJob -parallel -screen  chtMultiRegionSimpleFoam
