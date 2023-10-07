@@ -25,7 +25,7 @@ mv constant/polyMesh constant/cold
 
 Change the locationInMesh for hot in snappyHexMeshdict
 
-<img src=https://sun9-2.userapi.com/impg/GutCCZUP11dCZbgFRAq6PLCIbGqe_IOIfNGnzw/jxSXvkh4fBk.jpg?size=893x105&quality=95&sign=9d049403ba4fbfae71d7241974b9a659&type=album/>
+<img src="https://sun9-2.userapi.com/impg/GutCCZUP11dCZbgFRAq6PLCIbGqe_IOIfNGnzw/jxSXvkh4fBk.jpg?size=893x105&quality=95&sign=9d049403ba4fbfae71d7241974b9a659&type=album"/>
 ```
 blockMesh
 
