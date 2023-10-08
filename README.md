@@ -23,7 +23,7 @@ mv constant/polyMesh constant/cold
 
 ```
 
-+ Change the locationInMesh for hot in snappyHexMeshdict
+## Change the locationInMesh for hot in snappyHexMeshdict
 
 <img src="https://sun9-2.userapi.com/impg/GutCCZUP11dCZbgFRAq6PLCIbGqe_IOIfNGnzw/jxSXvkh4fBk.jpg?size=893x105&quality=95&sign=9d049403ba4fbfae71d7241974b9a659&type=album"/>
 
@@ -41,7 +41,7 @@ reconstructParMesh -constant
 mv constant/polyMesh constant/hot
 
 ```
-+ Change the boundaries in cold/polyMesh/boundary file as per(don't change nFaces and startFace in your file) :-
+## Change the boundaries in cold/polyMesh/boundary file as per(don't change nFaces and startFace in your file) :-
 
 <img src ="https://sun9-32.userapi.com/impg/BHwbCpRdSieqKFfEIa6Bn4C_k59ofUXsgthY7Q/Gaml3XkzGpg.jpg?size=595x507&quality=95&sign=2a4551ce317d56e8c1edb549fdeaa073&type=album" />
 
@@ -49,7 +49,7 @@ mv constant/polyMesh constant/hot
 
 <img src ="https://sun9-4.userapi.com/impg/WzyAr_8PLibXDwubdUEh7cExUyvwEDSeA-lXZA/sNxmxjTQD6w.jpg?size=588x499&quality=95&sign=657d37cc27cc6156a0814749d43b9864&type=album" />
 
-+ Change the boundaries in hot/polyMesh/boundary file as per(don't change nFaces and startFace in your file):-
+## Change the boundaries in hot/polyMesh/boundary file as per(don't change nFaces and startFace in your file):-
 
 <img src ="https://sun9-62.userapi.com/impg/DQuodUdS3Iz3mkb-HVkLoXWP9v6oLhekMYJmUw/RqZL8rDE6uI.jpg?size=606x495&quality=95&sign=c2b19e3c34818fd852c6d9e066661b91&type=album"/>
 
