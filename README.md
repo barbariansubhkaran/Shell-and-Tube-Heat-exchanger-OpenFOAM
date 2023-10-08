@@ -49,9 +49,10 @@ mv constant/polyMesh constant/cold
 
 + Change the boundaries in hot/polyMesh/boundary file as per :-
 
+<img src ="https://sun9-62.userapi.com/impg/DQuodUdS3Iz3mkb-HVkLoXWP9v6oLhekMYJmUw/RqZL8rDE6uI.jpg?size=606x495&quality=95&sign=c2b19e3c34818fd852c6d9e066661b91&type=album"/>
+<img src ="" />
 <img src = />
-<img src = />
-<img src = />
+
 
 ```
 decomposePar -force -allRegions
