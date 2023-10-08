@@ -38,14 +38,16 @@ foamJob -parallel -screen snappyHexMesh -overwrite
 
 reconstructParMesh -constant
 
-mv constant/polyMesh constant/cold
+mv constant/polyMesh constant/hot
 
 ```
 + Change the boundaries in cold/polyMesh/boundary file as per :-
 
-<img src = />
-<img src = />
-<img src = />
+<img src ="https://sun9-32.userapi.com/impg/BHwbCpRdSieqKFfEIa6Bn4C_k59ofUXsgthY7Q/Gaml3XkzGpg.jpg?size=595x507&quality=95&sign=2a4551ce317d56e8c1edb549fdeaa073&type=album" />
+
+<img src ="https://sun9-48.userapi.com/impg/JnNFx8MCHNZEcWI8bFqh-k6taeaJpovoYRcdhQ/npFp8YUBtv0.jpg?size=587x500&quality=95&sign=17ae3517b1db33f6f5461c64441249e9&type=album" />
+
+<img src ="https://sun9-4.userapi.com/impg/WzyAr_8PLibXDwubdUEh7cExUyvwEDSeA-lXZA/sNxmxjTQD6w.jpg?size=588x499&quality=95&sign=657d37cc27cc6156a0814749d43b9864&type=album" />
 
 + Change the boundaries in hot/polyMesh/boundary file as per :-
 
