@@ -63,4 +63,6 @@ decomposePar -force -allRegions
 
 foamJob -parallel -screen  chtMultiRegionSimpleFoam
 
+reconstructPar -allRegions
+
 ```
