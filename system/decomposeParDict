@@ -7,28 +7,9 @@ FoamFile
 }
 
 // Exported by SnappyHexMesh GUI add-on for Blender v1.0
-// Source file: 
+// Source file:
 // Export date: 2022-04-12 17:47:06.428296
 
 numberOfSubdomains 4;
 
 method          scotch;
-// method          simple;
-
-simpleCoeffs
-{
-    n               (1 1 4);
-    delta           0.001;
-}
-
-hierarchicalCoeffs
-{
-    n               (1 1 4);
-    delta           0.001;
-    order           xyz;
-}
-
-manualCoeffs
-{
-    dataFile        "cellDecomposition";
-}
