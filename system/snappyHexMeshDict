@@ -99,6 +99,12 @@ castellatedMeshControls
     nCellsBetweenLevels 4;
     locationInMesh (0.0 0.0 0.392073); //cold
     //locationInMesh (0.0 0.023594 0.079448); //hot
+locationsInMesh
+(
+    ((0.0 0.0 0.392073) cold)
+    ((0.0 0.023594 0.079448) hot)
+   
+);
     allowFreeStandingZoneFaces true;
     resolveFeatureAngle 30;
     features
